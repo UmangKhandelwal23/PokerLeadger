@@ -1,16 +1,16 @@
-/* Base styles - Mobile first */
+/* Base styles */
 body {
   font-family: Arial, sans-serif;
   background: #0b132b;
   color: white;
-  padding: 15px;
   margin: 0;
+  padding: 20px 15px;
 }
 
 h1 {
   text-align: center;
-  font-size: 1.8rem;
-  margin-bottom: 20px;
+  font-size: 2rem;
+  margin-bottom: 25px;
 }
 
 /* Form container */
@@ -18,9 +18,11 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-bottom: 25px;
+  max-width: 600px;
+  margin: 0 auto 30px;
 }
 
+/* Inputs */
 input#name, input#buyin {
   padding: 12px;
   font-size: 1.2rem;
@@ -37,41 +39,61 @@ input#buyin {
   pointer-events: none; /* readonly */
 }
 
-button {
+/* Buy-in buttons wrapper */
+.buyin-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Buy-in increment/decrement buttons */
+.buyin-controls button {
+  flex: 1 1 0;
+  max-width: 80px;
+  padding: 12px;
+  font-size: 1.2rem;
+  border-radius: 6px;
   background-color: #3a86ff;
   border: none;
-  border-radius: 8px;
-  padding: 14px;
   color: white;
-  font-size: 1.2rem;
   cursor: pointer;
   transition: background-color 0.25s ease;
 }
 
-button:hover {
+.buyin-controls button:hover {
   background-color: #265fdd;
 }
 
-/* Buy-in buttons container */
-.buyin-controls {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+/* Add Player button */
+button#add-player {
+  padding: 14px;
+  font-size: 1.3rem;
+  background-color: #3a86ff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: block;
+  color: white;
 }
 
-.buyin-controls button {
-  flex: 1 1 0;
-  max-width: 80px;
+button#add-player:hover {
+  background-color: #265fdd;
 }
 
-/* Table styles */
+/* Table */
 table {
   width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
   border-collapse: collapse;
   font-size: 1.1rem;
-  min-width: 320px; /* allow scroll on mobile */
+  color: white;
   overflow-x: auto;
-  display: block;
+  display: block; /* enable horizontal scroll on mobile */
 }
 
 thead {
@@ -82,7 +104,6 @@ th, td {
   padding: 12px 10px;
   text-align: center;
   border: 1px solid #2f4f8f;
-  word-break: break-word;
   white-space: nowrap;
 }
 
@@ -95,35 +116,48 @@ td.loss {
   color: #ff4c4c; /* red */
 }
 
-/* Responsive tweaks for bigger screens */
-@media (min-width: 600px) {
+/* Cash Out button in table */
+table button {
+  padding: 8px 14px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  background-color: #3a86ff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+table button:hover {
+  background-color: #265fdd;
+}
+
+/* Responsive tweaks for desktop */
+@media (min-width: 700px) {
   body {
-    padding: 30px 60px;
+    padding: 40px 60px;
   }
 
   .card {
     flex-direction: row;
+    gap: 20px;
+    max-width: none;
+    justify-content: center;
     align-items: center;
   }
 
   input#name {
-    flex: 2;
-    margin-right: 20px;
+    flex: 3;
+    margin: 0;
   }
 
   .buyin-controls {
     flex: 1;
     max-width: 200px;
-    margin-right: 20px;
+    margin: 0;
   }
 
   button#add-player {
     flex: 1;
     max-width: 140px;
-  }
-
-  table {
-    display: table;
-    min-width: auto;
-  }
-}
+    marg
