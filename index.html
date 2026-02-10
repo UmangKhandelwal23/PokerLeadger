@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Poker Ledger</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>♠ Poker Ledger</h1>
+
+  <div class="card">
+    <input id="name" placeholder="Player name" />
+    <input id="buyin" type="number" placeholder="Buy-in" />
+    <button onclick="addPlayer()">Add Player</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Player</th>
+        <th>Buy-in</th>
+        <th>Cash-out</th>
+        <th>Profit/Loss</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="players"></tbody>
+  </table>
+
+  <script src="app.js"></script>
+</body>
+</html>
