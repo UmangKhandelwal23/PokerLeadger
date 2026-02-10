@@ -1,63 +1,72 @@
 /* Base styles */
 body {
   font-family: Arial, sans-serif;
-  background: #0b132b;
+  background-color: #0b132b;
   color: white;
   margin: 0;
-  padding: 20px 15px;
+  padding: 20px;
 }
 
 h1 {
   text-align: center;
   font-size: 2rem;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
-/* Form container */
+/* Container for form inputs */
 .card {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
   max-width: 600px;
   margin: 0 auto 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
 }
 
-/* Inputs */
-input#name, input#buyin {
-  padding: 12px;
-  font-size: 1.2rem;
-  border-radius: 6px;
+/* Player name input */
+input#name {
+  flex: 2 1 200px;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
   border: none;
-  width: 100%;
-  box-sizing: border-box;
-  text-align: center;
-  background: #162447;
+  background-color: #162447;
   color: white;
+  text-align: center;
 }
 
-input#buyin {
-  pointer-events: none; /* readonly */
-}
-
-/* Buy-in buttons wrapper */
+/* Buy-in controls container */
 .buyin-controls {
+  flex: 1 1 150px;
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 10px;
+  align-items: center;
 }
 
-/* Buy-in increment/decrement buttons */
-.buyin-controls button {
-  flex: 1 1 0;
-  max-width: 80px;
-  padding: 12px;
-  font-size: 1.2rem;
-  border-radius: 6px;
-  background-color: #3a86ff;
+/* Buy-in input */
+input#buyin {
+  width: 70px;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
   border: none;
+  background-color: #162447;
+  color: white;
+  text-align: center;
+  pointer-events: none;
+}
+
+/* Buttons inside buyin controls */
+.buyin-controls button {
+  padding: 10px 15px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #3a86ff;
   color: white;
   cursor: pointer;
-  transition: background-color 0.25s ease;
+  transition: background-color 0.3s ease;
 }
 
 .buyin-controls button:hover {
@@ -66,25 +75,22 @@ input#buyin {
 
 /* Add Player button */
 button#add-player {
-  padding: 14px;
-  font-size: 1.3rem;
-  background-color: #3a86ff;
+  flex: 1 1 100px;
+  padding: 12px;
+  font-size: 1.2rem;
+  border-radius: 5px;
   border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.25s ease;
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  display: block;
+  background-color: #3a86ff;
   color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button#add-player:hover {
   background-color: #265fdd;
 }
 
-/* Table */
+/* Table styles */
 table {
   width: 100%;
   max-width: 800px;
@@ -93,7 +99,7 @@ table {
   font-size: 1.1rem;
   color: white;
   overflow-x: auto;
-  display: block; /* enable horizontal scroll on mobile */
+  display: block;
 }
 
 thead {
@@ -101,63 +107,49 @@ thead {
 }
 
 th, td {
-  padding: 12px 10px;
+  padding: 12px;
   text-align: center;
   border: 1px solid #2f4f8f;
   white-space: nowrap;
 }
 
-/* Profit/Loss colors */
+/* Profit and loss colors */
 td.profit {
-  color: #32cd32; /* lime green */
+  color: #32cd32;
 }
 
 td.loss {
-  color: #ff4c4c; /* red */
+  color: #ff4c4c;
 }
 
-/* Cash Out button in table */
+/* Cash out buttons in table */
 table button {
-  padding: 8px 14px;
+  padding: 8px 12px;
   font-size: 1rem;
-  border-radius: 6px;
+  border-radius: 5px;
   border: none;
   background-color: #3a86ff;
   color: white;
   cursor: pointer;
-  transition: background-color 0.25s ease;
+  transition: background-color 0.3s ease;
 }
 
 table button:hover {
   background-color: #265fdd;
 }
 
-/* Responsive tweaks for desktop */
-@media (min-width: 700px) {
-  body {
-    padding: 40px 60px;
-  }
-
+/* Responsive adjustments */
+@media (max-width: 600px) {
   .card {
-    flex-direction: row;
-    gap: 20px;
-    max-width: none;
-    justify-content: center;
-    align-items: center;
-  }
-
-  input#name {
-    flex: 3;
-    margin: 0;
+    flex-direction: column;
+    gap: 15px;
   }
 
   .buyin-controls {
-    flex: 1;
-    max-width: 200px;
-    margin: 0;
+    justify-content: space-around;
   }
 
-  button#add-player {
-    flex: 1;
-    max-width: 140px;
-    marg
+  table {
+    font-size: 0.9rem;
+  }
+}
