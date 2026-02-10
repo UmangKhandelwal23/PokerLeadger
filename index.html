@@ -1,129 +1,32 @@
-/* Base styles - Mobile first */
-body {
-  font-family: Arial, sans-serif;
-  background: #0b132b;
-  color: white;
-  padding: 15px;
-  margin: 0;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Poker Ledger</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>♠ Poker Ledger</h1>
 
-h1 {
-  text-align: center;
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-}
+  <div class="card">
+    <input id="name" placeholder="Player name" />
+    <input id="buyin" type="number" placeholder="Buy-in" />
+    <button onclick="addPlayer()">Add Player</button>
+  </div>
 
-/* Form container */
-.card {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 25px;
-}
+  <table>
+    <thead>
+      <tr>
+        <th>Player</th>
+        <th>Buy-in</th>
+        <th>Cash-out</th>
+        <th>Profit/Loss</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="players"></tbody>
+  </table>
 
-input#name, input#buyin {
-  padding: 12px;
-  font-size: 1.2rem;
-  border-radius: 6px;
-  border: none;
-  width: 100%;
-  box-sizing: border-box;
-  text-align: center;
-  background: #162447;
-  color: white;
-}
-
-input#buyin {
-  pointer-events: none; /* readonly */
-}
-
-button {
-  background-color: #3a86ff;
-  border: none;
-  border-radius: 8px;
-  padding: 14px;
-  color: white;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: background-color 0.25s ease;
-}
-
-button:hover {
-  background-color: #265fdd;
-}
-
-/* Buy-in buttons container */
-.buyin-controls {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.buyin-controls button {
-  flex: 1 1 0;
-  max-width: 80px;
-}
-
-/* Table styles */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 1.1rem;
-  min-width: 320px; /* allow scroll on mobile */
-  overflow-x: auto;
-  display: block;
-}
-
-thead {
-  background-color: #1f4068;
-}
-
-th, td {
-  padding: 12px 10px;
-  text-align: center;
-  border: 1px solid #2f4f8f;
-  word-break: break-word;
-  white-space: nowrap;
-}
-
-/* Profit/Loss colors */
-td.profit {
-  color: #32cd32; /* lime green */
-}
-
-td.loss {
-  color: #ff4c4c; /* red */
-}
-
-/* Responsive tweaks for bigger screens */
-@media (min-width: 600px) {
-  body {
-    padding: 30px 60px;
-  }
-
-  .card {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  input#name {
-    flex: 2;
-    margin-right: 20px;
-  }
-
-  .buyin-controls {
-    flex: 1;
-    max-width: 200px;
-    margin-right: 20px;
-  }
-
-  button#add-player {
-    flex: 1;
-    max-width: 140px;
-  }
-
-  table {
-    display: table;
-    min-width: auto;
-  }
-}
+  <script src="app.js"></script>
+</body>
+</html>
