@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Poker Ledger</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <h1>♠ Poker Ledger</h1>
 
   <div class="card">
-    <input id="name" placeholder="Player name" />
-    <input id="buyin" type="number" placeholder="Buy-in" />
+    <input id="name" placeholder="Player name">
+
+    <div class="buyin-controls">
+      <button onclick="changeBuyin(-400)">−</button>
+      <input id="buyin" value="400" readonly>
+      <button onclick="changeBuyin(400)">+</button>
+    </div>
+
     <button onclick="addPlayer()">Add Player</button>
   </div>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Player</th>
-        <th>Buy-in</th>
-        <th>Cash-out</th>
-        <th>Profit/Loss</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody id="players"></tbody>
-  </table>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Player</th>
+          <th>Buy-in</th>
+          <th>Cash-out</th>
+          <th>P/L</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="players"></tbody>
+    </table>
+  </div>
 
-  <script src="app.js"></script>
+<script src="app.js"></script>
 </body>
 </html>

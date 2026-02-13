@@ -1,7 +1,6 @@
-/* Base styles */
 body {
   font-family: Arial, sans-serif;
-  background-color: #0b132b;
+  background: #0b132b;
   color: white;
   margin: 0;
   padding: 20px;
@@ -9,147 +8,96 @@ body {
 
 h1 {
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 20px;
 }
 
-/* Container for form inputs */
 .card {
-  max-width: 600px;
-  margin: 0 auto 30px;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
+  margin-bottom: 25px;
 }
 
-/* Player name input */
-input#name {
+input {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+  background: #162447;
+  color: white;
+}
+
+#name {
   flex: 2 1 200px;
-  padding: 10px;
-  font-size: 1rem;
-  border-radius: 5px;
-  border: none;
-  background-color: #162447;
-  color: white;
-  text-align: center;
 }
 
-/* Buy-in controls container */
 .buyin-controls {
-  flex: 1 1 150px;
   display: flex;
-  justify-content: center;
-  gap: 10px;
   align-items: center;
+  gap: 8px;
 }
 
-/* Buy-in input */
-input#buyin {
-  width: 70px;
-  padding: 10px;
-  font-size: 1rem;
-  border-radius: 5px;
-  border: none;
-  background-color: #162447;
-  color: white;
-  text-align: center;
-  pointer-events: none;
-}
-
-/* Buttons inside buyin controls */
 .buyin-controls button {
-  padding: 10px 15px;
+  padding: 8px 14px;
   font-size: 1.2rem;
-  border-radius: 5px;
+  background: #3a86ff;
   border: none;
-  background-color: #3a86ff;
+  border-radius: 5px;
   color: white;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .buyin-controls button:hover {
-  background-color: #265fdd;
+  background: #265fdd;
 }
 
-/* Add Player button */
-button#add-player {
-  flex: 1 1 100px;
-  padding: 12px;
-  font-size: 1.2rem;
-  border-radius: 5px;
+button {
+  padding: 10px 15px;
+  font-size: 1rem;
+  background: #3a86ff;
   border: none;
-  background-color: #3a86ff;
+  border-radius: 5px;
   color: white;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-button#add-player:hover {
-  background-color: #265fdd;
+button:hover {
+  background: #265fdd;
 }
 
-/* Table styles */
+.table-container {
+  overflow-x: auto;
+}
+
 table {
   width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
   border-collapse: collapse;
-  font-size: 1.1rem;
-  color: white;
-  overflow-x: auto;
-  display: block;
-}
-
-thead {
-  background-color: #1f4068;
+  min-width: 500px;
 }
 
 th, td {
-  padding: 12px;
+  border: 1px solid #444;
+  padding: 10px;
   text-align: center;
-  border: 1px solid #2f4f8f;
-  white-space: nowrap;
 }
 
-/* Profit and loss colors */
-td.profit {
-  color: #32cd32;
+.profit {
+  color: #00ff7f;
 }
 
-td.loss {
-  color: #ff4c4c;
+.loss {
+  color: #ff4d4d;
 }
 
-/* Cash out buttons in table */
-table button {
-  padding: 8px 12px;
-  font-size: 1rem;
-  border-radius: 5px;
-  border: none;
-  background-color: #3a86ff;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-table button:hover {
-  background-color: #265fdd;
-}
-
-/* Responsive adjustments */
+/* Mobile adjustments */
 @media (max-width: 600px) {
   .card {
     flex-direction: column;
-    gap: 15px;
-  }
-
-  .buyin-controls {
-    justify-content: space-around;
+    align-items: stretch;
   }
 
   table {
-    font-size: 0.9rem;
+    min-width: 400px;
   }
 }
